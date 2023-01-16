@@ -14,14 +14,14 @@ class String{
     void Reverse(){
         char B[10];
         // for(int i=0;name[i]!='\0';i++){
-        //     B[i]=name[sizeof(B)/sizeof(B[0])-i-1];
+        //     B[i]=name[sizeof(name)/sizeof(name[0])-i-1];
         // }
         // for(int i=0;name[i]!='\0';i++){
         //     name[i]=B[i];
         // }
         // cout<<"Reversed name is "<<name<<endl;
         int i=0;
-        int j=sizeof(B)/sizeof(B[0])-1;
+        int j=sizeof(name)/sizeof(name[0])-1;
         while(i<j){
             char temp=name[i];
             name[i]=name[j];
