@@ -24,11 +24,14 @@ class Node{
         }
     }
     void Display(Node *p){
+        int count=0;
         while(p!=nullptr){
+            count++;
             cout<<p->data<<"->";
             p=p->next;
         }
         cout<<"/0"<<endl;
+        cout<<"the number of elements are "<<count<<endl;
     }
     void Insert(int i,int a){
         Node *p=head;
@@ -37,16 +40,30 @@ class Node{
         while(p!=nullptr){
             count++;
             if(count==i){
-                Node *temp=new Node;
-                temp->data=a;
-                temp->next=q->next;
-                q->next=temp;
+                if(i==1){
+                    Node *temp=new Node;
+                    temp->data=a;
+                    temp->next=head;
+                    head=temp;
+                }
+                else{
+                    Node *temp=new Node;
+                    temp->data=a;
+                    temp->next=q->next;
+                    q->next=temp;
+                }
                 // q->next=p->next;
                 // p->next=head;
                 // head=p;
             }
             q=p;
             p=p->next;
+        }
+        if(i>count){
+            Node *temp=new Node;
+            temp->data=a;
+            temp->next=nullptr;
+            q->next=temp;
         }
     }
 };
@@ -57,7 +74,7 @@ int main(){
     n.Create(B,n1);
     Node *b=n.head;
     n.Display(b);
-    n.Insert(4,35);
+    n.Insert(8,35);
     Node *b1=n.head;
     n.Display(b1);
     return 0;
