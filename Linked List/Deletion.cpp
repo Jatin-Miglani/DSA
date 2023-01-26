@@ -44,6 +44,13 @@ class Node{
             count++;
             if(p->data==a){
                 cout<<"Found at "<<count<<endl;
+                if(count==1){
+                    Node *temp=new Node;
+                    head=p->next;
+                    temp->data=p->data;
+                    p->next=temp;
+                    return 0;
+                }
                 Node *temp=new Node;
                 q->next=p->next;
                 temp->data=p->data;
