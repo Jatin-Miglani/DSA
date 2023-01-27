@@ -36,20 +36,34 @@ class Node{
         cout<<"The number of elements are "<<count<<endl;
     }
 
-    void Insert(int a){
+    void Insert(int s){
         Node *p=head;
         Node *q=NULL;
+        if(p->data>s){
+            Node *temp=new Node;
+            temp->data=s;
+            temp->next=p;  
+            head=temp;
+            return;         
+        }
+        q=p;
+        p=p->next;
         while(p!=nullptr){
-            if(p->data>=a){
+            if(p->data>s){
                 Node *temp=new Node;
-                temp->data=a;
+                temp->data=s;
                 temp->next=p;
                 q->next=temp;
-                return;
+                break;
             }
             q=p;
             p=p->next;
         }
+        Node *temp=new Node;
+        temp->data=s;
+        temp->next=p;
+        q->next=temp;
+        
     }
 };
 int main(){
