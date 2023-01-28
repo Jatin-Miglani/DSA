@@ -38,10 +38,25 @@ class Node{
         
         cout<<"<>"<<endl;
     }
+    
+    void Display(Node *p){
+        static int flag=0;
+        if(p!=head || flag==0){
+            flag++;
+            cout<<p->data<<"->";
+            p=p->next;
+            Display(p);
+        }
+        else{
+            cout<<"<>"<<endl;
+        }
+    }
 };
 int main(){
     Node n;
     n.Create();
     n.Display();
+    Node *p=n.head;
+    n.Display(p);
     return 0;
 }
