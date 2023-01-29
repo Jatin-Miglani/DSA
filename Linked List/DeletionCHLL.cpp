@@ -46,7 +46,6 @@ class Node{
     int Delete(int a){
         Node *p=NULL;
         Node *q=top;
-        Node *r=top;
         int count=-1;
         do
         {
