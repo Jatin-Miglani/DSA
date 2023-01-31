@@ -32,6 +32,7 @@ class Node {
 
         }
         end=temp;
+        delete []A;
     }
 
     void Display(){
