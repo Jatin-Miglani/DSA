@@ -31,6 +31,7 @@ class Node{
         }
         end=temp;
         head->prev=end;
+        delete []A;
     }
     void Display(){
         Node *p=head;
