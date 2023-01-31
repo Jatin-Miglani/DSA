@@ -31,6 +31,7 @@ class Node{
             last->next=temp;
             last=temp;
         }
+        delete []B;
     }
 
     void Display(Node *p){
