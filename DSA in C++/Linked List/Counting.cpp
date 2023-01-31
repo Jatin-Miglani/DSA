@@ -30,6 +30,7 @@ class Node{
             last->next=temp;
             last=temp;
         }
+        delete []B;
 
     }
 
