@@ -11,13 +11,13 @@ class Node{
     void Create(int A[],int n){
         head=new Node;
         head->data=A[0];
-        head->next=nullptr;
+        head->next=NULL;
         Node *last=head;
         Node *temp;
         for(int i=1;i<n;i++){
             temp=new Node;
             temp->data=A[i];
-            temp->next=nullptr;
+            temp->next=NULL;
             last->next=temp;
             last=temp;
         }
@@ -26,7 +26,7 @@ class Node{
     void Display(){
         Node *p=head;
         int count1=0;
-        while(p!=nullptr){
+        while(p!=NULL){
             count1++;
             cout<<p->data<<"->";
             p=p->next;
@@ -65,6 +65,8 @@ class Node{
             p->data=A[i];
             p=p->next;
         }
+        
+        delete []A;
     }
 
     void RemoveDuplicates(){
@@ -78,7 +80,7 @@ class Node{
                 p->next=q->next;
                 return;
             }
-        } while (q!=nullptr);
+        } while (q!=NULL);
         
     }
 };
