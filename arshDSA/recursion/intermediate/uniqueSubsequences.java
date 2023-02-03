@@ -19,7 +19,7 @@ public class uniqueSubsequences {
     }
     public static void main(String[] args) {
         String s = "aaa";
-        HashSet <String> set = new HashSet<>();
+        HashSet <String> set = new HashSet<>(); //set only contains unique items
         subs(s, 0, "", set);
 
     }
