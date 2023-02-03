@@ -30,9 +30,22 @@ class Stack{
     }
 
     void Display(){
-        for(int i=0;i<size;i++){
-            cout<<"|"<<S[size-i-1]<<"|"<<endl;
+        for(int i=0;i<top+1;i++){
+            cout<<"|"<<S[top+1-i-1]<<"|"<<endl;
         }
+    }
+    
+    int Pop(){
+        int x;
+        if(top==-1){
+            cout<<"Underflow - Stack empty"<<endl;
+            x=-1;
+        }
+        else{
+            x= S[top];
+            top--;
+        }
+        return x;
     }
 };
 int main(){
@@ -47,6 +60,9 @@ int main(){
     for(int i=0;i<s.size;i++){
         s.peek(i+1);
     }
+    s.Display();
+    cout<<"Pop operation goes by____________________________________________________"<<endl;
+    s.Pop();
     s.Display();
     return 0;
 }
