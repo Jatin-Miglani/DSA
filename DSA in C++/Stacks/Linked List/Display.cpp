@@ -37,10 +37,14 @@ class Stack{
 
     void Display(){
         Stack *p=Top;
+        if(p->next==nullptr){
+            cout<<"No more Elements "<<endl;
+        }
         while(p->next){
             cout<<"|"<<p->data<<"|"<<endl;
             p=p->next;
         }
+        
     }
 
     int pop(){
@@ -58,6 +62,35 @@ class Stack{
             return x;
         }
     }
+
+    void Peek(){
+        if(Top->next==NULL){
+            cout<<"Stack Underflow "<<endl;
+
+        }
+        else{
+            cout<<Top->data<<endl;
+        }
+    }
+
+    void IsEmpty(){
+        if(Top->next==nullptr){
+            cout<<"The Stack is empty "<<endl;
+        }
+        else{
+            cout<<"Not Empty "<<endl;
+        }
+    }
+
+    void IsFull(){
+        Stack *p=new Stack;
+        if(p==NULL){
+            cout<<"The Stack is Full "<<endl;
+        }
+        else{
+            cout<<"Not Full "<<endl;
+        }
+    }
 };
 int main(){
     Stack  s;
@@ -70,10 +103,22 @@ int main(){
     }
     s.Display();
     s.DisplayLL();
+    s.Peek();
     cout<<"The deleted element is "<<s.pop()<<endl;
+    s.Peek();
     s.Display();
     cout<<"The deleted element is "<<s.pop()<<endl;
-
+    s.Peek();
     s.Display();
+    cout<<"The deleted element is "<<s.pop()<<endl;
+    s.Peek();
+    s.Display();
+    cout<<"The deleted element is "<<s.pop()<<endl;
+    s.Peek();
+    s.Display();
+    cout<<"The deleted element is "<<s.pop()<<endl;
+    s.Peek();
+    s.Display();
+    s.IsEmpty();
     return 0;
 }
