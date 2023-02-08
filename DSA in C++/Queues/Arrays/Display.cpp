@@ -23,11 +23,14 @@ class Queue{
             else{
                 rear=0;
                 Q[rear]=x;
+                cout<<rear<<" "<<front<<endl;
             }
         }
         else{
             rear++;
             Q[rear]=x;
+            cout<<rear<<" "<<front<<endl;
+
         }
     }
 
@@ -38,10 +41,21 @@ class Queue{
             return x;
         }
         else{
-            front++;
-            x=Q[front];
-            Q[front]=0;
-            return x;
+            if(front==rear){
+                front=-1;
+                front++;
+                x=Q[front];
+                Q[front]=0;
+                cout<<rear<<" "<<front<<endl;
+                return x;
+            }
+            else{
+                front++;
+                x=Q[front];
+                Q[front]=0;
+                cout<<rear<<" "<<front<<endl;
+                return x;
+            }
         }
     }
 
@@ -82,6 +96,8 @@ int main(){
     q.Enqueue(6);
     q.Display();
     q.Enqueue(7);
+    q.Display();
+    q.Dequeue();
     q.Display();
     return 0;
 }
