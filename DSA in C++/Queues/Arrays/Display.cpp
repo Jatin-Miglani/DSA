@@ -15,47 +15,53 @@ class Queue{
     }
 
     void Enqueue(int x){
+        
+        if(rear==size-1 && front==-1){
+            cout<<"No Addition, Queue is FULL."<<endl;
+            return;
+        }
+        if(rear==front && rear!=-1 && front!=-1){
+            cout<<"No Addition, Queue is FULL."<<endl;
+            return;
+        }
         if(rear==size-1){
-            if(front==-1){
-                cout<<"Queue is Full."<<endl;
-                return;
-            }
-            else{
-                rear=0;
-                Q[rear]=x;
-                cout<<rear<<" "<<front<<endl;
-            }
+            rear=-1;
+            rear++;
+            Q[rear]=x;
+            cout<<rear<<" "<<front<<endl;
         }
         else{
             rear++;
             Q[rear]=x;
-            cout<<rear<<" "<<front<<endl;
-
+            cout<<rear<<" "<<front<<endl; 
         }
     }
 
     int Dequeue(){
+    
         int x=-1;
         if(front==-1 && rear==-1){
-            cout<<"Queue Empty.";
+            cout<<"Nothing to delete."<<endl;
+            return 0;
+        }
+        if(front==size-1){
+            front=-1;
+            front++;
+            x=Q[front];
+            Q[front]=0;
+            cout<<rear<<" "<<front<<endl;
             return x;
         }
         else{
+            front++;
+            x=Q[front];
+            Q[front]=0;
+            cout<<rear<<" "<<front<<endl;
             if(front==rear){
                 front=-1;
-                front++;
-                x=Q[front];
-                Q[front]=0;
-                cout<<rear<<" "<<front<<endl;
-                return x;
+                rear=-1;
             }
-            else{
-                front++;
-                x=Q[front];
-                Q[front]=0;
-                cout<<rear<<" "<<front<<endl;
-                return x;
-            }
+            return x;
         }
     }
 
