@@ -49,3 +49,5 @@ int main(){
     q.Display();
     return 0;
 }
+
+//you can also Bubble sort according to decreasing order and then delete the last element accordingly and that takes more time complexity.
